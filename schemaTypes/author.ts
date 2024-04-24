@@ -28,17 +28,20 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'field',
+      title: 'Field',
+      type: 'string',
+    }),
+    defineField({
+      name: 'expertise',
+      title: 'Expertise',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}],
+    }),
+    defineField({
       name: 'bio',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      type: 'blockContent',
     }),
   ],
   preview: {
